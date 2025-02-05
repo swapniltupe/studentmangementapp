@@ -16,7 +16,15 @@ private int studentAge;
 private String studentCollageName;
 private String studentCourse;
 private String batchNumber;
+private String batchMode;
 private double fesspaid;
+
+public String getBatchMode() {
+	return batchMode;
+}
+public void setBatchMode(String batchMode) {
+	this.batchMode = batchMode;
+}
 public int getStudentId() {
 	return studentId;
 }

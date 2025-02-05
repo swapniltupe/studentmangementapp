@@ -60,7 +60,7 @@ public class AdminController {
 	public String onFees(@RequestParam("id") int id,Model m) {
 		Student stu=ssi.getStudentById(id);
 		m.addAttribute("st", stu);
-		return "feesUpdate";
+		return "fessUpdate";
 	}
 	
 	@RequestMapping("/payfees")

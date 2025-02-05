@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-pageEncoding="ISO-8859-1"%>
-!DOCTYPE html>
+	pageEncoding="ISO-8859-1"%>
+	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -12,7 +13,8 @@ pageEncoding="ISO-8859-1"%>
 	crossorigin="anonymous">
 <style type="text/css">
 .enroll {
-	background-image: url("https://static.vecteezy.com/system/resources/previews/001/926/091/non_2x/a-boy-and-a-book-of-knowledge-on-a-blackboard-background-free-photo.jpg");
+	background-image:
+		url("https://static.vecteezy.com/system/resources/previews/001/926/091/non_2x/a-boy-and-a-book-of-knowledge-on-a-blackboard-background-free-photo.jpg");
 	background-size: cover;
 	background-repeat: no-repeat;
 }
@@ -28,30 +30,32 @@ form {
 }
 
 .view {
-	background-image: url("https://static.vecteezy.com/system/resources/thumbnails/045/906/793/small_2x/stack-of-books-on-orange-background-free-photo.jpeg");
+	background-image:
+		url("https://static.vecteezy.com/system/resources/thumbnails/045/906/793/small_2x/stack-of-books-on-orange-background-free-photo.jpeg");
 	background-size: cover;
 	background-repeat: no-repeat;
 }
 </style>
 
 <script type="text/javascript">
-     function fees() {
+	function fees() {
 		alert("fess function call");
-		document.fn.action="fees";
+		document.fn.action = "fees";
 		document.fn.submit();
 	}
-     function remove() {
- 		
- 		document.fn.action="remove";
- 		document.fn.submit();
- 	}
+	function remove() {
 
+		document.fn.action = "remove";
+		document.fn.submit();
+	}
 </script>
 </head>
 <body>
 	<div class="card">
 		<nav class="d-flex justify-content-between p-2 border border-primary">
-			<img src="https://t4.ftcdn.net/jpg/05/12/70/87/240_F_512708765_fqrGcgMGDIrbjkY9B63J6pGy6jQxcQ6s.jpg" width="150px" height="80px">
+			<img
+				src="https://t4.ftcdn.net/jpg/05/12/70/87/240_F_512708765_fqrGcgMGDIrbjkY9B63J6pGy6jQxcQ6s.jpg"
+				width="150px" height="80px">
 			<div class="pt-2">
 				<a href="#enroll">
 					<button class="btn btn-outline-primary">Enroll Student</button>
@@ -113,7 +117,7 @@ form {
 										<div class="col-md-6 mb-2 pb-2">
 											<div class="form-outline">
 												<input type="number" id="emailAddress"
-													class="form-control form-control-sm" name="feesPaid" /> <label
+													class="form-control form-control-sm" name="fesspaid" /> <label
 													class="form-label" for="emailAddress">Fees Paid</label>
 											</div>
 										</div>
@@ -189,7 +193,7 @@ form {
 						<option value="REG-160">REG-160</option>
 						<option value="FDJ-186">FDJ-186</option>
 						<option value="REG-186">REG-186</option>
-						
+
 					</select>
 					<button class="btn btn-outline-primary mb-1">Search</button>
 				</form>
@@ -201,54 +205,54 @@ form {
 
 
 			<form name="fn">
-			
-			<table class="table table-hover" style="font-size: small">
-				<thead>
-					<tr>
-						<th>ID</th>
-						<th>Student Name</th>
-						<th>Student Email</th>
-						<th>Age</th>
-						<th>Collage Name</th>
-						<th>Course Name</th>
-						<th>Bath No</th>
-						<th>Mode</th>
-						<th>Fess Recived</th>
-						<th>Actions</th>
-					</tr>
-				</thead>
-				<tbody>
-					<c:forEach items="${data}" var="s">
+
+				<table class="table table-hover" style="font-size: small">
+					<thead>
 						<tr>
-							<td>${s.studentId}</td>
-							<td>${s.studentFullName}</td>
-							<td>${s.studentEmail}</td>
-							<td>${s.studentAge}</td>
-							<td>${s.studentCollageName}</td>
-							<td>${s.studentCourse}</td>
-							<td>${s.batchNumber}</td>
-							<td>${s.batchMode}</td>
-							<td>${s.feesPaid}</td>
-							
-						<td>
- <input type="radio" name="id" value="${s.studentId}">
- </td>
- <td>
- <div class="btn-group btn-group-sm" role="group" aria-label="...">
- <button class="btn btn-outline-success" onclick="fees()">Pay-Fees</button>
- <button class="btn btn-outline-primary" onclick="batch()">Shift-Batch</button>
- <button class="btn btn-outline-danger" onclick="remove()">Remove</button>
- </div>
- 
- </td>
+							<th>ID</th>
+							<th>Student Name</th>
+							<th>Student Email</th>
+							<th>Age</th>
+							<th>Collage Name</th>
+							<th>Course Name</th>
+							<th>Bath No</th>
+							<th>Mode</th>
+							<th>Fess Recived</th>
+							<th>Actions</th>
 						</tr>
-					</c:forEach>
+					</thead>
+					<tbody>
+						<c:forEach items="${data}" var="s">
+							<tr>
+								<td>${s.studentId}</td>
+								<td>${s.studentFullName}</td>
+								<td>${s.studentEmail}</td>
+								<td>${s.studentAge}</td>
+								<td>${s.studentCollageName}</td>
+								<td>${s.studentCourse}</td>
+								<td>${s.batchNumber}</td>
+								<td>${s.batchMode}</td>
+								<td>${s.fesspaid}</td>
 
-				</tbody>
+								<td><input type="radio" name="id" value="${s.studentId}">
+								</td>
+								<td>
+									<div class="btn-group btn-group-sm" role="group"
+										aria-label="...">
+										<button class="btn btn-outline-success" onclick="fees()">Pay-Fees</button>
+										<button class="btn btn-outline-primary" onclick="batch()">Shift-Batch</button>
+										<button class="btn btn-outline-danger" onclick="remove()">Remove</button>
+									</div>
 
-			</table>
-			
-			
+								</td>
+							</tr>
+						</c:forEach>
+
+					</tbody>
+
+				</table>
+
+
 			</form>
 		</section>
 	</div>

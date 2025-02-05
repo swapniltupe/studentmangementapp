@@ -40,7 +40,7 @@
 						</tr>
 						<tr class="table-danger fs-6">
 							<th>Fees Paid</th>
-							<td>${st.feesPaid}</td>
+							<td>${st.fesspaid}</td>
 						</tr>
 
 					</tbody>
